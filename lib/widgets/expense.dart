@@ -13,7 +13,7 @@ class ExpenseWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(18),
+      padding: EdgeInsets.only(top: 18,left: 18,right: 18,bottom: 10),
       margin: EdgeInsets.only(left: 17,right: 17,top: 18),
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(1),
@@ -92,15 +92,23 @@ class ExpenseWidget extends StatelessWidget {
     var newDt = DateFormat.yMMMEd().format(expense.time);
     var newDtHour = DateFormat.jm().format(expense.time);
     return Container(
+      margin: EdgeInsets.only(top: 9),
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
-            "$newDtHour $newDt",
-            style: TextStyle(
-              color: Color.fromRGBO(71, 8, 154, 1),
-              fontSize: 12,
+          Container(
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(71, 8, 154, 1).withOpacity(0.8),
+              borderRadius: BorderRadius.circular(18),
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 8,vertical: 2),
+            child: Text(
+              "$newDtHour $newDt",
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.8),
+                fontSize: 12,
+              ),
             ),
           )
         ],

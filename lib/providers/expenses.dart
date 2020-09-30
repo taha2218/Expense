@@ -6,6 +6,7 @@ class Expenses with ChangeNotifier {
   List<Expense> _expenseList = [
     Expense(amount: 1800, itemDescription: "Grocery Items",time:DateTime.now() ),
     Expense(amount: 120, itemDescription: "Stationary Items",time:DateTime.now() ),
+    
   ];
 
   List<Expense> get expenseList => _expenseList ;
